@@ -1,0 +1,86 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define MAX 50
+typedef struct
+{
+	char s[MAX];
+	int length;
+}SeqList;
+SeqList A;
+SeqList B;
+int Delete(int m,int n)
+{
+
+    int 	i=0;
+	while(i<m&&(A.s[i]==B.s[i])&&i<n)
+	{
+		++i;
+	}
+	if(i<m&&i<n)
+	{
+		if(A.s[i]>B.s[i])
+		{
+			return 1;
+		}
+		else 
+		{
+			return 2;
+		}
+	}
+	else if(i==m&&i<n)
+	{
+		return  2;
+	}
+	else if(i==n&&i<m)
+	{
+		return 1;
+	}
+	else  if(m==i&&i==n)
+	{
+		return 0;
+	}
+}
+
+void main()
+{
+
+	int b,i;
+	printf("请输入A的元素个数\n");
+	scanf("%d",&A.length);
+	getchar();
+	printf("输入A的元素\n");
+	for(i=0;i<A.length;i++)
+	{
+		scanf("%c",&A.s[i]);
+		getchar();
+	}
+		
+	A.s[A.length]='\0';
+	printf("请输入B的元素个数\n");
+	scanf("%d",&B.length);
+	getchar();
+	printf("输入B的元素\n");
+	for(i=0;i<B.length;i++)
+	{
+		scanf("%c",&B.s[i]);
+		getchar();
+	}
+
+	B.s[B.length]='\0';
+	b=Delete(A.length,B.length);
+	if(b==1)
+	{
+		printf("A比B大\n");
+	}
+	else if(b==2)
+	{
+		printf("B比A大\n");
+	}
+	else if(b==0)
+	{
+		printf("AB大小相等\n");
+	}
+
+}

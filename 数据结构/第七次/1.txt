@@ -1,0 +1,121 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+typedef enum{FALSE, TRUE} Boolean;
+Boolean visited[MAX];
+typedef struct node
+{
+    int power[MAX][MAX];
+    int data[MAX];//顶点信息的数组
+    int numV;//当前的顶点数
+    int numE;//当前的边数
+}s;
+void CreateGraph(s *G)
+{
+    int i,j,n,vi,vj,e,w;
+    printf("请输入顶点个数和边数（空格隔开）：");
+    scanf("%d%d",&n,&e);
+    G->numV = n; G->numE = e;
+    for(i=0;i<n;i++)//对图进行初始化
+    {
+        for(j=0;j<n;j++)
+        {
+            G->power[i][j] = 0;
+        }
+    }
+    for(i=0;i<n;i++)//将顶点存入数组中
+    {
+        printf("请输入第%d个顶点信息(整型):",i+1);
+        scanf("%d",&G->data[i]);
+    }
+    printf("因是无相图权值默认为 1 \n");
+    for(i=0;i<e;i++)
+    {
+        printf("请输入边的信息i,j以空格分隔)(i,j为顶点)：");
+        scanf("%d%d",&vi,&vj);
+        G->power[vi-1][vj-1] = 1;
+        G->power[vj-1][vi-1] = 1;
+    }
+}
+void pril(s G)
+{
+    int i,j,n,a[MAX]={0};
+    for(i=0;i<G.numV;i++)
+    {
+        for(j=0;j<G.numV;j++)
+        {
+            a[i] = a[i] + G.power[i][j];
+        }
+    }
+    for(i=0;i<G.numV;i++)
+    {
+    printf("顶点%d的度为%d\n",i+1,a[i]);
+    }
+}
+void prirange(s G)//广度遍历
+{
+    int i,j,n,a[10]={0},k,p=0;
+    printf("%d\n",G.data[0]);
+    for(i=0;i<G.numV;i++)
+    {
+        for(j=i;j<G.numV;j++)
+        {
+            p=0;
+            if(G.power[i][j]!=0)
+            {
+                for(k=0;k<G.numV;k++)
+                {
+                    if(j!=a[k])
+                    {
+                        p++;
+                    }
+                }
+                if(p==G.numV&&j<G.numV)
+                {
+                    a[j]=j;
+                    printf("广度优先遍历：顶点%d\n",G.data[j]);
+                }
+
+            }
+        }
+    }
+}
+void pripro(s G,int i)
+{
+    printf("深度优先遍历：顶点%d\n",G.data[i]);
+    visited[i] = TRUE;
+    for(int j=0;j<G.numV;j++)
+    {
+        if(G.power[i][j]==1&&!visited[j])
+            pripro(G,j);
+    }
+}
+void DFS(s G)
+{
+    int i;
+    for(i=0;i<G.numV;i++)
+    {
+        visited[i] = FALSE;
+    }
+    for(i=0;i<G.numV;i++)
+    {
+        if(!visited[i])
+        {
+            pripro(G,i);
+        }
+    }
+}
+
+int main()
+{
+    s G;
+    CreateGraph(&G);
+    printf("输出个顶点的度\n");
+    pril(G);
+    printf("广度遍历\n");
+    prirange(G);
+    printf("深度遍历\n");
+    DFS(G);
+
+    return 0;
+}

@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+ char a[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'},d;
+ int i,k,b[26],s=26,p=2;
+ scanf("%c",&d);
+ k=d;
+ for(i=0;i<26;i++)
+ {
+  b[i]=a[i];
+ }
+ while(p)
+ {p=2;
+	 if(k==b[s]||k==b[s]+32)
+	 {
+		 printf("%c",b[s]);
+		 return 0;
+	 }
+	 else if(k<b[s]+32)
+	 {
+		 s=s/2;
+		 continue;
+	 }
+	 else if(k>b[s]+32)
+	 {
+		 s=(s+s*2)/2;
+		 		 
+	 }
+ }
+ return 0;
+}
+

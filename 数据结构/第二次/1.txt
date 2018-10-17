@@ -1,0 +1,128 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h> 
+typedef struct 
+{
+	 int number;
+}NUM;
+NUM s[100];
+int Delete(int m)
+{
+	//m为删除第m位元素
+	int j;
+	if(m>=10||m<1)
+	{
+		return 0;
+	}
+	else
+	{
+		for(j=m;j<10;j++)
+		{
+			s[j].number=s[j+1].number;
+		}
+	}
+	return 1;
+}
+
+int insList(int m,int count)
+{
+	//m为第m个元素之前插入count
+	int j,max=s[1].number;
+	if(m>=10||m<1)
+	{
+		return 0;
+	}
+	else
+	{
+	for(j=9;j>=m;j--)
+	{
+		s[j+1].number=s[j].number;
+	}
+	s[m].number=count;
+	}
+	for(j=2;j<11;j++)
+	{
+		if(s[j].number>max)
+		{
+			max=s[j].number;
+		}
+	}
+
+	return max;
+}
+void rink(void)
+{
+	int i,j,temp;
+	for(i=1;i<11;i++)
+	{
+		for(j=1;j<10;j++)
+		{
+			if(s[j].number>s[j+1].number)
+			{
+				temp=s[j].number;
+				s[j].number=s[j+1].number;
+				s[j+1].number=temp;
+			}
+		}
+	}
+}
+ 
+void main()
+{
+	
+	int a[11]={0,12,56,34,89,57,75,34,23,8,39},i=0,n;
+	int count,m,b,D;
+	for(i=1;i<11;i++)
+	{
+		s[i].number=a[i];
+	}
+	printf("输入您要查找的第n位数\n");
+	scanf("%d",&n);
+	if(n>10||n<1)
+	{
+		printf("查找错误\n");
+	}
+	else
+	{
+	printf("%d\n",s[n].number);
+	}
+	printf("删除第几位数字\n");
+	scanf("%d",&D);
+	b=Delete(D);
+	if(b==1)
+	{
+		printf("已删除\n");
+	}
+	else 
+	{
+		printf("删除不合理\n");
+	}
+	printf("将数字插入第几位\n");
+	scanf("%d",&m);
+	printf("输入插入值\n");
+	scanf("%d",&count);
+	b=insList(m,count);
+	if(b==0)
+	{
+		printf("插入不合理\n");
+	}
+	else 
+	{
+	
+		printf("已插入,max=%d\n",b);
+	}
+	rink();
+		for(i=1;i<11;i++)
+	{
+		printf("%d\n",s[i].number);
+	}
+
+
+}
+	
+
+
+
+
+
+	

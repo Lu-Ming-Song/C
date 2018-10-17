@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+typedef struct student 
+{
+	char name[20];
+	int score;
+}STU;
+
+int main()
+{
+	STU s[5],temp;
+	int i,j;
+	for(i=0;i<5;i++)
+	{
+		scanf("%s%d",s[i].name,&s[i].score);
+	}
+	printf("ºÙºÙ\n");
+	for(j=0;j<5;j++)
+	{
+		for(i=0;i<4;i++)
+		{
+			if(s[i].score>s[i+1].score)
+			{
+				temp=s[i];
+				s[i]=s[i+1];
+				s[i+1]=temp;
+			}
+		}
+	}
+	for(i=0;i<5;i++)
+	{
+		printf("%s %d\n",s[i].name,s[i].score);
+	}
+	return 0;
+}
+

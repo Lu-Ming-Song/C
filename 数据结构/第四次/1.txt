@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+typedef struct
+{
+    int date[MAX];
+    int front,rear;//front 指向对头前一个空间， rear只想队尾的数值；
+}SeqList;
+SeqList p;
+void init_Queue()
+{
+    p.front=p.rear=-1;
+}
+void in_Queue()
+{
+    int x,s;
+    printf("请输入您需要的成员数：\n");
+    scanf("%d",&s);
+    while(s>0)
+    {
+    printf("请输入第%d位成员数值：\n",p.rear+2);
+    scanf("%d",&x);
+    p.rear++;s--;
+    p.date[p.rear]=x;
+    }
+
+}
+void Front_Queue()
+{
+    if(p.rear==p.front)
+    {
+        printf("队空了!\n");
+    }
+    else
+        printf("头数值为\n");
+        printf("%d",p.date[++p.front]);
+}
+int date_Queue()
+{
+    int x;
+    p.front++;
+    return p.date[p.front];
+}
+int main()
+{
+
+    int k,i=0,x;
+    init_Queue();//给头尾赋值
+    in_Queue();//输入
+    printf("您需要出几个数值:\n");
+    scanf("%d",&k);
+    while(k>0)
+    {
+        k--;
+        x=date_Queue();//删除
+        printf("已删除%d\n",x);
+    }
+    Front_Queue();
+    return 0;
+}

@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+ char a[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'},d;
+ int i,k,b[26];
+ scanf("%c",&d);
+ k=d;
+ for(i=0;i<26;i++)
+ {
+  b[i]=a[i];
+ }
+ for(i=0;i<26;i++)
+ {
+  if(k==b[i]||k==b[i]+32)
+  {
+   printf("%c",k);
+  return 0;
+  }
+ }
+ printf("meiyou");
+ return 0;
+}

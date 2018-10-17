@@ -1,0 +1,123 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+typedef struct node
+{
+ unsigned long num;
+ char name[20];
+ int attendance[20];
+ int score;
+ int usually[20];
+ int interim;
+ int test;
+ int final;
+ int total;
+ struct node *next;
+}SeqList;
+SeqList *head,*p,*pr;
+void file(int b)
+{
+ FILE *fp;
+ int i=0;
+ if((fp=fopen("C:\\Users\\11246\\Desktop\\test.txt","w+"))==NULL)
+ {
+  printf("Failure to open C:\\Users\1124\Desktop\\test.txt!\n");
+  exit(0);
+ }
+ p=head;
+ while(p!=NULL)
+ {
+  fprintf(fp,"%ld\t",p->num);
+  fprintf(fp,"%s\t",p->name);
+  for(i=0;i<=b;i++)
+  {
+  fprintf(fp,"%d\t",p->attendance[i]);
+  }
+  for(i=0;i<=b;i++)
+  {
+  fprintf(fp,"%d\t",p->usually[i]);
+  }
+  fprintf(fp,"%d\t",p->interim);
+  fprintf(fp,"%d\t",p->test);
+  fprintf(fp,"%d\t",p->final);
+  p=p->next;
+ }
+ fclose(fp);
+ printf("hhe");
+}	
+SeqList *build(int n,int i,int len)
+{
+	int j;
+	p=head;
+ for(j=0;j<n;j++)
+ {   
+	 printf("输入考勤\n");
+  scanf("%d",&p->attendance[i]);
+  printf("输入平时成绩\n");
+  scanf("%d",&p->usually[i]); 
+  p=p->next;
+ }
+ if(i==(len)/2)
+ {
+	 	p=head;
+ for(j=0;j<n;j++)
+ {
+	 printf("输入期中成绩:\n");
+     scanf("%d",&p->interim);
+ }
+ }
+
+ if(i==len-1)
+ {
+	 	p=head;
+ for(j=0;j<n;j++)
+ { 
+  printf("输入期末成绩:\n");
+  scanf("%d",&p->final);
+  p=p->next;
+ }
+ }
+}
+void main()
+{
+ 
+ int i=0,k=0,n,j,len;
+ printf("请输入您成员的总数\n");
+ scanf("%d",&n);
+ pr=head=p=(SeqList *)malloc(sizeof(SeqList));
+
+ for(j=0;j<n;j++)
+ {   
+  printf("输入学生的学号：\n");
+  scanf("%ld",&p->num); 
+  printf("输入学生的姓名\n");
+  scanf("%s",p->name);
+  printf("输入考勤\n");
+  scanf("%d",&p->attendance[i]);
+  printf("输入平时成绩\n");
+  scanf("%d",&p->usually[i]); 
+  printf("小测试成绩:\n");
+  scanf("%d",&p->test);
+  p->final=0;p->interim=0;p->test=0;
+  p->next=NULL;
+  pr->next=p;
+  pr=p;
+  if(j<n-1)
+  {
+  p=(SeqList *)malloc(sizeof(SeqList));
+  } 
+ }
+ printf("您一共多少节课：\n");
+ scanf("%d",&len);
+ while(i<len)
+ {
+ file(int i);
+ i++;
+ if(i<len)
+ {
+ build(n,i,len);
+ }
+ }
+}
+ 
+ 

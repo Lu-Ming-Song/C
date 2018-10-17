@@ -1,0 +1,131 @@
+#include <stdio.h>
+#include <malloc.h>
+#include <math.h>
+typedef struct node
+{
+    int data;
+    struct node *next;
+}List;
+List *headdata[12] = {NULL},*s,*p;
+void line()
+{
+    int a,i,count = 1;
+    printf("输入-1程序输入结束！\n");
+    scanf("%d",&a);
+    while(a != -1)
+    {
+        s = (List *)malloc(sizeof(List));
+        s->data = a;
+        s->next = NULL;
+        i = a % 11;
+        if(headdata[i] == NULL)
+        {
+         headdata[i] = s;
+        }
+        else
+        {
+            s->next = headdata[i];
+            headdata[i] = s;
+        }
+        scanf("%d",&a);
+    }
+    printf("请输入要查找的数据\n");
+    scanf("%d",&a);
+    i = a % 11;
+    p = headdata[i];
+    while(p != NULL && p->data != a)
+    {
+        count++;
+        p = p->next;
+    }
+    if (p == NULL)
+    {
+        printf("没有找到！\n");
+    }
+    else
+    {
+        printf("找到了！找了%d次！\n",count);
+    }
+}
+
+void main()
+{
+    int a,b,i,count = 1,data[12] = {0},j,k = 1;
+    printf("若您想用线性探测请输入：1\n想用二次线性探测在散列请输入: 2\n");
+    scanf("%d",&b);
+    printf("输入-1程序输入结束！且数据中不要出现 0 \n");
+    scanf("%d",&a);
+    while(a != -1)
+    {
+        k = 1;//次方
+        j = 1;//进入增减次数
+        i = a % 11;
+        if(b == 2)
+        {
+            while(data[i] != 0)
+           {
+               if(j % 2 != 0)
+                {
+                    i = (a % 11)  + pow(k,2);
+                }
+               else if(j % 2 ==0)
+                {
+                     i = (a % 11) - pow(k,2);
+                     k++;
+
+                }
+                j++;
+          }
+        }
+        else if(b == 1)
+        {
+             while(data[i] != 0)
+             {
+                 i++;
+             }
+        }
+    data[i] = a;
+    scanf("%d",&a);
+    }
+    printf("请输入要查找的数据\n");
+    scanf("%d",&a);
+    i = a % 11;
+    if(b == 1)
+    {
+    while(data[i] != a && count <= 12)
+    {
+        count++;
+        i++;
+    }
+    }
+    else if(b == 2)
+    {
+        j = 1;
+        k = 1;
+        while(data[i] != a && count <= 12)
+        {
+            count++;
+               if(j % 2 != 0)
+                {
+                    i = (a % 11)  + pow(k,2);
+                }
+               else if(j % 2 ==0)
+                {
+                     i = (a % 11) - pow(k,2);
+                     k++;
+
+                }
+                j++;
+          }
+
+    }
+    if(data[i] == a)
+    {
+     printf("找到了！找了%d次\n",count);
+    }
+    else if(count>12)
+    {
+            printf("没找到");
+    }
+
+}

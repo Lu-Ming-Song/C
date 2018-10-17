@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 10
+typedef struct node
+{
+    char a;
+    struct node *next;
+}SeqList;
+SeqList *str1,*str2,*p1,*p2,*pr1,*pr2,*p;//*p指向相同后缀
+//str1,p1,pr1分别为第一个单词的空头指针、指针、指针后驱
+int compare(char a[],char b[],int lena,int lenb)//比较两个单词是否有相同后缀
+//有则输出相同字母的个数
+{
+    int k;
+	k=0;
+    while(a[lena-1]==b[lenb-1])
+    {
+        --lena;
+        --lenb;
+        k++;
+    }
+    return k;
+}
+SeqList *Bulid_l(int k,char a[],char b[],int lena,int lenb)
+{
+    int i=0;
+   pr1=str1=(SeqList *)malloc(sizeof(SeqList));
+    pr2=str2=(SeqList *)malloc(sizeof(SeqList));
+    while(i<lena-k)
+    {
+        p1=(SeqList *)malloc(sizeof(SeqList));
+        p1->a=a[i];
+        p1->next=NULL;
+        pr1->next=p1;
+        pr1=p1;
+        i++;
+    }
+    i=0;
+     while(i<lenb-k)
+    {
+        p2=(SeqList *)malloc(sizeof(SeqList));
+        p2->a=b[i];
+        p2->next=NULL;
+        pr2->next=p2;
+        pr2=p2;
+        i++;
+    } 
+	while(i<lenb)
+    {
+         p=(SeqList *)malloc(sizeof(SeqList));
+         p->a=b[i];
+         p->next=NULL;
+         pr2->next=pr1->next=p;
+         pr1=pr2=p;
+         i++;
+    }
+}
+void main()
+{
+    char a[MAX],b[MAX];
+    int k,lena,lenb;
+    printf("请您输入第一个单词：");
+    gets(a);
+    printf("请您输入第二个单词：");
+    gets(b);
+	lena=strlen(a);
+	lenb=strlen(b);
+    k=compare(a,b,lena,lenb);
+	if(k==0)
+	{
+		printf("没有相同后缀\n");
+	}
+	else
+	{
+    Bulid_l(k,a,b,lena,lenb);
+	}
+}
+ 

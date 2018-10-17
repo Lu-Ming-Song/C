@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct binode
+{
+    char date;
+    struct binode *lchild,*rchild;
+}SeqList;
+SeqList *createrbitree()//先序创建二叉树
+{
+    SeqList *tr;
+    char ch;
+    scanf("%c",&ch);
+    if(ch==’*’) return NULL;
+    else
+    {
+        tr=(SeqList *)malloc(sizeof(SeqList));
+        tr->date=ch;
+        tr->lchild=createrbitree();
+        tr->rchild=createrbitree();
+    }
+    return tr;
+}
+SeqList preorder(SeqList *T)//先序遍历
+{
+    if(T==NULL) return ;
+    printf("%c",T->date);
+    preorder(T->lchild);
+    preorder(T->rchild);
+}
+SeqList infixorder(SeqList *T)//中序遍历
+{
+    if(T==NULL) return ;
+     preorder(T->lchild);
+     printf("%c",T->date);
+     preorder(T->rchild);
+}
+SeqList postorder(SeqList *T)//后序遍历
+{
+    if(T==NULL) return ;
+     preorder(T->lchild);
+     preorder(T->rchild);
+     printf("%c",T->date);
+}
+int main()
+{
+    SeqList *T;
+    T=createrbitree();
+    printf("先序遍历输出：");
+    preorder(T);
+    printf("\n中序遍历输出: ");
+    infixorder(T);
+    printf("\n后序遍历输出: ");
+    postorder(T);
+    return 0;
+}

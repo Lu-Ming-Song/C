@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node
+{
+    struct Node *last;//前驱
+    int date;
+    struct Node *link;
+};
+typedef struct Node SeqList;
+SeqList *p,*pr,*head;
+SeqList *Bulid(int n)
+{
+    int i=1;
+    head=p=pr=(SeqList *)malloc(sizeof(SeqList));
+    printf("输入第%d个数值",i);
+    scanf("%d",&p->date);
+    p->link=NULL;
+    p->last=NULL;
+    while(i<n)
+    {
+        i++;
+    p=(SeqList *)malloc(sizeof(SeqList));
+    printf("输入第%d个数值：",i);
+    scanf("%d",&p->date);
+    p->last=pr;
+    pr->link=p;
+    pr=p;
+    }
+    p->link=NULL;
+}
+SeqList *Find(int k,int n)
+{
+    int i=1;
+     if(k<1||k>n)
+    {
+        printf("查找错误！\n");
+    }
+    else
+    {
+    while(i<k)
+    {
+        p=p->last;
+        i++;
+    }
+    printf("%d",p->date);
+    }
+}
+void main()
+{
+    int n,k;
+    printf("您要输入几位数值:\n");
+    scanf("%d",&n);
+    Bulid(n);
+    printf("请输入您要查找的第K位倒数：\n");
+    scanf("%d",&k);
+        Find(k,n);
+
+}
+ 
+ 

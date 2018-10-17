@@ -1,0 +1,186 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+#include<string.h>
+struct Node
+{
+	int num;
+	struct Node *next;
+};
+typedef struct Node SeqList;
+SeqList *p,*head,*pr;
+SeqList *Bulid(int k)
+{
+	int n,i=1;
+	printf("输入数组元素\n");
+	scanf("%d",&n);
+	p->num=n;
+	p->next=NULL;
+	while(i<k)
+	{
+		p=(SeqList *)malloc(sizeof(SeqList));
+		printf("输入数组元素\n");
+		scanf("%d",&n);
+		p->num=n;
+		p->next=NULL;
+		pr->next=p;
+		pr=p;
+		i++;
+	}
+}
+SeqList *Findlist(int m)
+{
+	SeqList *pt;
+	int i=1;
+	pt=head;
+	while(i<m)
+	{
+		pt=pt->next;
+		i++;
+	}
+	return pt;
+}
+SeqList *Delete(int m,int k)
+{
+
+	SeqList *pt,*prept; 
+	prept=NULL;
+	//prept=(SeqList *)malloc(sizeof(SeqList));
+	if(m==1)
+	{
+	prept=Findlist(m);
+	head=prept->next;
+	free(prept);
+	return 0;
+	}
+	else if(m==k)
+	{
+		prept=Findlist(m-1);
+		prept->next=NULL;
+		free(prept);
+		return 0;
+	}
+	prept=Findlist(m-1);
+	pt=Findlist(m);
+	prept->next=pt->next;
+	free(pt);
+	return 0;
+}
+SeqList *insert(int m,int k)
+{
+	SeqList *pt,*prept;
+ 	int i=0;
+	pt=(SeqList *)malloc(sizeof(SeqList));
+	printf("请输入要插入的数: \n");
+	scanf("%d",&pt->num);
+	pt->next=NULL;
+	if(m==1)
+	{
+			prept=Findlist(m);
+			prept->next=head;
+			head=prept;
+	return head;
+	}
+	else if(m==k)
+	{
+		pr->next=pt;
+		pt->next=NULL;
+		return pt;
+	}
+	prept=Findlist(m-1);
+	pt->next=prept->next;
+	prept->next=pt;
+
+	return pt;
+}
+int mx()
+{
+	int a;
+	a=head->num;
+	p=head->next;
+	while(p!=NULL)
+	{
+		if(a<p->num)
+		{
+			a=p->num;
+		}
+		p=p->next;
+	}
+	return a;
+}
+
+SeqList rank(int k)
+{
+	SeqList *py;
+	
+	int a,i,temp;
+	p=head;
+	a=head->num;
+	for(i=0;i<k;i++)
+	{
+	while(p!=NULL)
+	{
+		if(a>p->num)
+		{
+			temp=a;
+			a=p->num;
+			p->num=temp;
+		}
+		p=p->next;
+	}
+	}
+}
+
+	
+int main()
+{
+	SeqList *Pt,*Pc;
+	int m,k,i;
+	pr=p=head=(SeqList *)malloc(sizeof(SeqList));
+	printf("您要输入多少位元素：\n");
+	scanf("%d",&k);
+	Bulid(k);
+	printf("您要查找第几位数：\n");
+	scanf("%d",&m);
+	if(m<1||m>k)
+	{
+		printf("查找位数不合理：\n");
+	}
+	else
+	{
+		Pt=Findlist(m);
+		printf("已查到： %d\n",Pt->num);
+	}
+	printf("您要删除第几位数：\n");
+	scanf("%d",&m);
+	if(m<1||m>k)
+	{
+		printf("删除位数不合理：\n");
+	}
+	else
+	{
+		Delete(m,k);
+		printf("已删除： \n");
+	}
+	printf("您要插入到第几位数后：\n");
+	scanf("%d",&m);
+	if(m<1||m>k)
+	{
+		printf("插入位数不合理：\n");
+	}
+	else
+	{
+		Pc=insert(m,k-1);
+		printf("已插入： %d\n",Pc->num);
+	}
+	m=mx();
+	printf("%d\n",m);
+	rank(k);
+	p=head;
+		while(p!=NULL)
+	{
+		printf("%d\n",p->num);
+		p=p->next;
+	}
+		return 0;
+}
