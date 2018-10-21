@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int n,count,b,x,h;
+	printf("Input n(1<n<=5):\n");
+	scanf("%d",&n);
+	if(n>5||n<=1)
+	{
+		printf("Error!\n");
+	}
+	else
+	{
+		h=n;
+		count=1;
+		while(count<=n)
+		{
+			b=h%n;
+			if(b!=1)
+			{
+				x++;
+				h=x; 
+				count++;
+				continue;
+			}
+			else
+			{
+				h=h-1;
+				h=h*(n-1)/n;
+				count++;
+			}
+		}
+	}
+		printf("y=%d",x);
+
+		return 0;
+}
+							

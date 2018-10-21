@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+ double j=-1,sin,term,x,i,n;
+ int count=1;
+ printf("Input x:\n");
+scanf("%lf",&x);
+sin=x;
+n=x;i=1;
+do{
+n=n*x*x;
+i=i*2*count*(2*count+1);
+term=n/i*j;
+sin=sin+term;
+j=-j;
+count++;
+}
+while(term>=1e-5||term<=-1e-5);
+printf("sin(x)=%.3f,count=%d\n",sin,count);
+return 0;
+
+} 

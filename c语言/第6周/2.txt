@@ -1,0 +1,29 @@
+#include<stdlib.h>
+#include<stdio.h>
+int main()
+{
+	int x,y,i,k;
+	char a,b;
+	printf("Please input a capital:\n");
+	scanf("%c",&a);
+	x=a-64;
+	for(i=1;i<=x;i++) 
+	{
+		for(y=x-i+1;y>=1;y--)
+		{
+			printf(" ");
+		}
+		for(k=1;k<=i;k++)
+		{
+			b=k+64;
+			printf("%c",b);
+		}
+		for(k=i-1;k>=1;k--)
+		{
+			b=k+64;
+			printf("%c",b);
+		}
+		printf("\n");
+	}
+	return 0;
+}

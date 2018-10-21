@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int aver(int i,int f[],int n);
+int main()
+{
+	int n,i,a,b,f[100]={0},k=0,d;
+	printf("Input n:\n");
+	scanf("%d",&n);
+	for(i=11;i<=n;i++)
+	{
+		
+		if(i<100)
+		{
+			a=i/10;
+			b=i%10;
+			if(a==b)
+			{
+				d=aver(i,f,n);
+			}
+		}
+		else
+		{
+			a=i/100;
+			b=i%10;
+		    if(a==b)
+			{
+				d=aver(i,f,n);
+			}
+		}
+	}
+	for(i=0;i<d;i++)
+	{
+		printf("%4d",f[i]);
+	}
+	printf("\ncount=%d\n",d);
+	return 0;
+}
+int aver(int i,int f[],int n)
+{
+	static int k=0;
+	int j,count=0,p=0;
+	for(j=2;j<=sqrt(i);j++,p++)
+	{
+		if(i%j!=0)
+		{
+			count++;
+		}
+		else
+		{
+			count=0;
+		}
+	}
+	if(count==p)
+	{
+		f[k]=i;	
+		k++;
+	}
+	return k;
+}

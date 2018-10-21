@@ -1,0 +1,42 @@
+#include<stdlib.h>
+#include<stdio.h>
+int Gcd(int a, int b);
+int main()
+{
+	int m,n,g,j,k;
+	printf("Input m,n:");
+	scanf("%d,%d",&m,&n);
+	k=Gcd(m,n);
+	if(k==-1)
+	{
+		printf("Input error!\n");
+	}
+	else 
+	{
+		j=m/k;
+		g=n/k;
+		printf("%d/%d\n",j,g);
+	}
+	return 0;
+}
+int Gcd(int a, int b)
+{
+	int l;
+	if(a<1||b>10000||b<=0)
+	{
+		return -1;
+	}
+
+	while(b>0)
+	{
+		l=a%b;
+		a=b;
+		b=l;
+	}
+	return a;
+}
+
+	
+
+
+

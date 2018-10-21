@@ -1,0 +1,23 @@
+#include<stdlib.h>
+#include<stdio.h>
+int main()
+{
+	char x;
+	int asc,i=0,count=0,y,k;
+	printf("Please input a capital:\n");
+	scanf("%c",&x);
+	asc=(int)x;
+	y=asc-(int)'A';
+	for(k=0;k<y;k++)
+	{
+		for(;i<y;i++)
+		{
+		    printf(" ");
+		}
+		 printf("%c",'A');
+		 count++;
+	      y--;	
+		if()
+		{
+			printf("%c",'A'+1)
+

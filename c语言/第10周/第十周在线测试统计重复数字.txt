@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int CountRepeatStr(char str[], int *tag);
+int main()
+{
+	char str[80];
+	int tag=0;
+	printf("Input a string:\n");
+	gets(str);
+	printf("%c:%d\n",CountRepeatStr(str,&tag),tag);
+	return 0;
+}
+int CountRepeatStr(char str[], int *tag)
+{
+	
+	int i,p=0,a[80],k=1;
+	char t[80];
+	*tag=str;
+	for(i=0;str[i]!='\0';i++)
+	{
+		while(str[i]==str[i+1])
+		{
+			*tag=str[i];
+			k++;
+			i++;
+			tag++;
+		}
+		    a[p]=k;
+	    	p++;
+	     	k=1;
+	}
+	return  t[*tag];
+}
+
