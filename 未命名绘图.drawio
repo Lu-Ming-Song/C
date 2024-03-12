@@ -1,9 +1,25 @@
-<mxfile host="app.diagrams.net" modified="2024-03-12T14:54:27.453Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" version="24.0.5" etag="Zvwmv7j_TvFwFNbL0qG1" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-12T15:06:52.250Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="5pM335FlT_qLJEk2U0eY" version="24.0.5" type="github">
   <diagram name="第 1 页" id="v9RPSZmyG27nppwmcgUL">
-    <mxGraphModel>
+    <mxGraphModel dx="585" dy="318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="kB9ZSQ4HwHI6c62khaqU-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="130" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kB9ZSQ4HwHI6c62khaqU-4" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;lstm_input:InputLayer&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="130" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kB9ZSQ4HwHI6c62khaqU-27" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="340" y="210" width="60" height="40" as="geometry">
+            <mxRectangle width="60" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kB9ZSQ4HwHI6c62khaqU-28" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="340" y="250" width="60" height="40" as="geometry">
+            <mxRectangle width="60" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
