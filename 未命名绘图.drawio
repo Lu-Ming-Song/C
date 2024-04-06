@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-04-06T12:36:29.807Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="DLKlVpTf7UwNx7NPXa1B" version="24.2.0" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-06T12:37:55.179Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="2l86tURzBW5EVmCPxhgw" version="24.2.0" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="2072" dy="2214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1151" dy="1719" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -19,7 +19,7 @@
           <mxGeometry x="60" y="220" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="FpreykDB57erQ37y5_Jf-17" value="&lt;font style=&quot;font-size: 25px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#ff3333&quot;&gt;（黄丽丽）研究方向：&lt;/font&gt;&lt;/b&gt;微波链路测雨数据应用于城市雨洪模拟&lt;/font&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="10" y="150" width="870" height="200" as="geometry">
+          <mxGeometry x="10" y="130" width="870" height="200" as="geometry">
             <mxRectangle x="10" y="10" width="770" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -33,7 +33,7 @@
           <mxGeometry y="160" width="870" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FpreykDB57erQ37y5_Jf-25" value="&lt;font style=&quot;font-size: 25px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#ff3333&quot;&gt;（宋璐明）研究方向：&lt;/font&gt;&lt;/b&gt;基于深度学习的微波链路降雨反演可视化系统&lt;/font&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="10" y="460" width="870" height="160" as="geometry">
+          <mxGeometry x="10" y="360" width="870" height="160" as="geometry">
             <mxRectangle x="10" y="10" width="770" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -44,7 +44,7 @@
           <mxGeometry y="120" width="870" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FpreykDB57erQ37y5_Jf-29" value="&lt;font style=&quot;font-size: 25px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#ff3333&quot;&gt;（陶卫涛）研究方向：&lt;/font&gt;&lt;/b&gt;矫正湿天线衰减对微波链路测雨的影响&lt;/font&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="10" y="670" width="870" height="160" as="geometry">
+          <mxGeometry x="10" y="550" width="870" height="160" as="geometry">
             <mxRectangle x="10" y="10" width="770" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
