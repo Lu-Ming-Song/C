@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-07-31T14:39:29.427Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" etag="vNOdNQQo4V0x-dY9JDkq" version="24.5.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-31T14:42:25.785Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" etag="wtcBjHXSlxn4MKxQH8zD" version="24.5.4" type="github">
   <diagram name="第 1 页" id="vz4i3LhELy7wU1bM7fb8">
-    <mxGraphModel dx="1313" dy="706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="750" dy="404" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -179,16 +179,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="u5NkH72IfdMpRJPFfYtH-116" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;信号衰减数据&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="615" y="600" width="139" height="60" as="geometry" />
+          <mxGeometry x="623" y="602" width="139" height="60" as="geometry" />
         </mxCell>
         <mxCell id="u5NkH72IfdMpRJPFfYtH-117" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;降雨量数据&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="615" y="690" width="139" height="60" as="geometry" />
+          <mxGeometry x="623" y="692" width="139" height="60" as="geometry" />
         </mxCell>
         <mxCell id="u5NkH72IfdMpRJPFfYtH-118" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;opacity=30;" vertex="1" parent="1">
-          <mxGeometry x="564" y="590" width="210" height="170" as="geometry" />
+          <mxGeometry x="563" y="590" width="210" height="170" as="geometry" />
         </mxCell>
         <mxCell id="u5NkH72IfdMpRJPFfYtH-119" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;同步采集&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="584" y="610" width="10" height="110" as="geometry" />
+          <mxGeometry x="577" y="612" width="10" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
